@@ -40,7 +40,7 @@
 
 
     <!-- Topbar Start -->
-   <?php include('topbar.php');?>
+   <div id="topbar"></div>
     <!-- Topbar End -->
 
 
@@ -327,7 +327,7 @@
     
 
     <!-- Footer Start -->
-    <?php include('footer.php');?>
+    <div id="footer"></div>
     <!-- Footer End -->
 
 
@@ -346,6 +346,27 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+   fetch("topbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("topbar").innerHTML = data;
+  });
+  fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
+  fetch("nav.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("nav").innerHTML = data;
+  });
+
+
+
+  </script>
 </body>
 
 </html>
