@@ -40,7 +40,7 @@
 
 
     <!-- Topbar Start -->
-    <?php include('topbar.php');?>
+    <div id="header"></div>
     <!-- Topbar End -->
 
 
@@ -814,6 +814,13 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 </body>
 
 </html>
